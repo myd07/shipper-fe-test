@@ -45,6 +45,14 @@ export default function(state = initialState, action) {
         bookList: action.payload,
       }
       break;
+    case constants.ADD_ITEM_TO_LIST:
+      const newBooks = state.bookList;
+      newBooks.push(action.payload)
+      newState = {
+        ...state,
+        bookList: newBooks,
+      }
+      console.log(newState)
     default:
   }
 

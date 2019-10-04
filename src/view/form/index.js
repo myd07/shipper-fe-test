@@ -1,19 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { addBooks } from './action';
+import { useHistory } from "react-router"
 
-const handleSubmit = (e) => {
+const handleSubmit = (e, payload, bookList, history) => {
   e.preventDefault();
+  const id = bookList.length + 1;
+  const newPayload = {
+    ...payload,
+    id
+  }
+
+  history.push('/list');
+  return addBooks(newPayload);
 }
 
 const Form = ({ bookList, dispatch }) => {
   const [author, setAuthor] = React.useState('');
   const [title, setTitle] = React.useState('');
   const [body, setBody] = React.useState('');
+  let history = useHistory();
 
   return (
     <React.Fragment>
-      <form onSubmit={e => handleSubmit(e)}>
+      <form onSubmit={e => dispatch(handleSubmit(e, { author, title, body }, bookList, history))}>
         <div className="input-cell author">
           <label htmlFor="author">Author</label>
           <input id="author" type="text" onChange={(e) => setAuthor(e.target.value)} />
