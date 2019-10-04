@@ -1,6 +1,7 @@
 import ListView from 'view/list'
 import DetailView from 'view/detail'
 import FormView from 'view/form'
+import GeneratePasswordView from 'view/password'
 
 import defaultLayout from 'layout/default'
 
@@ -24,6 +25,13 @@ export const defaultRoutes = [
     name: 'form',
     path: '/new-post',
     component: defaultLayout(FormView),
+    exact: true,
+  },
+  {
+    key: 'router-4',
+    name: 'form',
+    path: '/generate-password',
+    component: defaultLayout(GeneratePasswordView),
     exact: true,
   },
 ]

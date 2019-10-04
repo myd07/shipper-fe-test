@@ -132,3 +132,12 @@ textarea {
     width: 400px;
   }
 }
+
+.input-password {
+  display: flex;
+  width: 400px;
+  button {
+    width: 250px;
+    outline: none;
+  }
+}
