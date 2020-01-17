@@ -6,9 +6,6 @@ function App() {
   return (
     <React.Fragment>
       <Switch>
-        <Route exact path="/">
-          <Redirect push from='/' to='/list' />
-        </Route>
         {
           defaultRoutes.map(route => (
             <Route
@@ -21,6 +18,9 @@ function App() {
             />
           ))
         }
+        <Route>
+          <Redirect push to='/' />
+        </Route>
       </Switch>
     </React.Fragment>
   );
