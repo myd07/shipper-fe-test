@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background-color: red
+  .page-driver_body {
+    margin-top: 30px
+  }
 `;
