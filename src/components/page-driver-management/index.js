@@ -1,8 +1,11 @@
 import React from 'react';
+import ActionBar from 'components/action-bar-driver-management'
 
 const PageDriverManagement = () => {
   return (
-    <div>Driver Management</div>
+    <>
+      <ActionBar/>
+    </>
   )
 }
 

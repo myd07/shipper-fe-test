@@ -2,7 +2,7 @@ import { colors, zindex } from 'assets/styles/variables';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;

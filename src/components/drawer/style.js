@@ -13,12 +13,13 @@ export const Wrapper = styled.div`
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    position: relative;
     div {
       width: 20px;
       margin-right: 15px;
     }
     &.selected {
-      color: ${colors.mainColor}
+      color: ${colors.mainColor};
     }
   }
 `;

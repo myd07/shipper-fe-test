@@ -27,28 +27,4 @@ const Drawer = () => {
   )
 }
 
-// class Drawer extends React.PureComponent {
-//   render() {
-//     console.log(this.props)
-//     return (
-//       <>
-//         <Wrapper>
-//           <Link to="/">
-//             <div><FontAwesomeIcon icon="home" /></div>
-//             Beranda
-//           </Link>
-//           <Link to="/driver-management" className="selected">
-//             <div><FontAwesomeIcon icon="user-circle" /></div>
-//             Driver Management
-//           </Link>
-//           <Link to="/">
-//             <div><FontAwesomeIcon icon="calendar-alt" /></div>
-//             Pickup
-//           </Link>
-//         </Wrapper>
-//       </>
-//     )
-//   }
-// }
-
 export default React.memo(Drawer)
