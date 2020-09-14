@@ -1,14 +1,13 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Wrapper } from './style'
+import Header from 'components/header'
 
 class DefaultLayout extends React.PureComponent {
   render() {
     return (
       <>
         <Wrapper>
-          <div>laol</div>
-          <FontAwesomeIcon icon="search" />
+          <Header/>
           {this.props.children}
         </Wrapper>
       </>

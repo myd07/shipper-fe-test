@@ -1,5 +1,5 @@
 import ListView from 'view/list';
-import PageDriverManagement from 'components/PageDriverManagement';
+import PageDriverManagement from 'components/page-driver-management';
 
 export const defaultRoutes = [
   {
