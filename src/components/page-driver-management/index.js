@@ -7,6 +7,7 @@ import Loadable from 'react-loadable';
 
 import ActionBar from 'components/action-bar-driver-management';
 import { Wrapper } from './style';
+import { makeGetDrivers } from 'store/driver/selector';
 
 const LoadableCardProduct = Loadable({
   loader: () => import('../card-driver'),
@@ -16,16 +17,22 @@ const LoadableCardProduct = Loadable({
 });
 
 class PageDriverManagement extends React.PureComponent {
+
   componentDidMount() {
     this.props.fetchDrivers();
   }
 
   render() {
+    const { drivers } = this.props;
     return (
       <Wrapper>
         <ActionBar/>
         <div className="page-driver_body">
-          <LoadableCardProduct driver={{}} />
+          {
+            drivers.map((driver, index) => (
+              <LoadableCardProduct driver={driver} key={`card-driver-${index}`} />
+            ))
+          }
         </div>
       </Wrapper>
     )
@@ -33,8 +40,9 @@ class PageDriverManagement extends React.PureComponent {
 }
 
 const mapStateToProps = state => {
+  const getDriver = makeGetDrivers();
   return {
-    drivers: state.driver.data
+    drivers: getDriver(state),
   }
 }
 
@@ -44,6 +52,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 PageDriverManagement.propTypes = {
   fetchDrivers: PropTypes.func,
+  drivers: PropTypes.array,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageDriverManagement)

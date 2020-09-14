@@ -1,8 +1,17 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { Wrapper } from './style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { connect } from 'react-redux';
+
+import { setDriverQuery } from 'store/driver/actions'
 
 class ActionBar extends React.PureComponent {
+
+  _onType(query) {
+    this.props.setDriverQuery(query);
+  }
+
   render() {
     return (
       <>
@@ -13,7 +22,7 @@ class ActionBar extends React.PureComponent {
           </div>
           <div className="action-bar_action">
             <div className="action-bar_search">
-              <input type="text" placeholder="Cari Driver" />
+              <input type="text" placeholder="Cari Driver" onChange={(e) => this._onType(e.target.value)} />
               <FontAwesomeIcon icon="search" />
             </div>
             <button type="button">
@@ -27,4 +36,8 @@ class ActionBar extends React.PureComponent {
   }
 }
 
-export default ActionBar
+const mapDispatchToProps = dispatch => bindActionCreators({
+  setDriverQuery
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(ActionBar)

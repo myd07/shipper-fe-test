@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     background-color: white;
-    width: 300px;
+    margin-bottom: 30px;
   }
   .card_head {
     padding: 15px;
