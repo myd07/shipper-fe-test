@@ -1,12 +1,19 @@
-import ListView from 'view/list'
-import defaultLayout from 'layout/default'
+import ListView from 'view/list';
+import PageDriverManagement from 'components/PageDriverManagement';
 
 export const defaultRoutes = [
   {
     key: 'router-1',
     name: 'index',
     path: '/',
-    component: defaultLayout(ListView),
+    component: ListView,
     exact: true,
   },
-]
+  {
+    key: 'router-2',
+    name: 'index',
+    path: '/driver-management',
+    component: PageDriverManagement,
+    exact: true,
+  },
+];

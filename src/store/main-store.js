@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import mainReducer from './mainReducer';
+import driverReducer from './driver/reducer';
 
 const rootReducer = combineReducers({
-	main: mainReducer,
+	driver: driverReducer,
 })
 
 export default rootReducer;
