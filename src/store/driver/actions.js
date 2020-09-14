@@ -1,32 +1,41 @@
 import axios from 'axios';
+import { parseDriverData } from './dto';
 
-export const MAP_LIST = (payload) => {
+export const SET_DRIVER_DATA_TYPE = 'SET_DRIVER_DATA';
+export const SET_DRIVER_IDS_TYPE = 'SET_DRIVER_IDS';
+
+export const setDriverIds = (payload) => {
   return {
-    type: 'MAP_LIST_TO_STORE',
+    type: 'SET_DRIVER_IDS_TYPE',
     payload,
-  }
-}
+  };
+};
 
-export const MAP_CITY = (payload) => {
+export const setDriverData = (payload) => {
   return {
-    type: 'MAP_CITY_TO_STORE',
+    type: SET_DRIVER_DATA_TYPE,
     payload,
-  }
-}
+  };
+};
 
-export const FETCH_LIST = (city) => {
+export const fetchDrivers = () => {
   return function(dispatch) {
     return axios({
-      url: `${process.env.REACT_APP_API}?id=${city}&q=&mode=json&units=metric&cnt=5&appid=271da6b323b05ebaf2b4aaa0f3378f89`,
+      url: `${process.env.REACT_APP_API}`,
+      params: {
+        results: 30
+      },
       method: 'GET'
-    })
-    .then(response => {
+    }).then(response => {
       const { data } = response;
-      dispatch(MAP_LIST(data.list));
-      dispatch(MAP_CITY(data.city.name));
-    })
-    .catch(error => {
-      console.log(error);
-    })
-  }
-}
+      const parsed = parseDriverData(data.results);
+      console.log(parsed);
+      // DISPATCH DRIVER DATA
+      dispatch(setDriverData(parsed.data));
+      // DISPATCH DRIVER IDS
+      dispatch(setDriverIds(parsed.ids));
+    }).catch(error => {
+      console.log('fetch driver error', error);
+    });
+  };
+};
