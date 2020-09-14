@@ -1,6 +1,7 @@
 import React from 'react';
 import { Wrapper } from './style'
 import Header from 'components/header'
+import Drawer from 'components/drawer';
 
 class DefaultLayout extends React.PureComponent {
   render() {
@@ -8,7 +9,10 @@ class DefaultLayout extends React.PureComponent {
       <>
         <Wrapper>
           <Header/>
-          {this.props.children}
+          <div className="layout_body-wrapper">
+            <Drawer/>
+            <div className="layout_body">{this.props.children}</div>
+          </div>
         </Wrapper>
       </>
     )

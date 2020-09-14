@@ -1,7 +1,13 @@
-import { colors } from 'assets/styles/variables';
+import { colors, zindex } from 'assets/styles/variables';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: ${zindex.level10};
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;

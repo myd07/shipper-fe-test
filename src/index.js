@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 // FONT AWESOME LIBRARY
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faUserCircle, faHome, faCalendarAlt, faPlus, faAngleRight, faAngleLeft, faEllipsisH, } from '@fortawesome/free-solid-svg-icons'
 // NORMALIZE CSS, RESET BROWSER DEFAULT CSS
 import 'normalize.css';
 // GLOBAL CSS NIT
@@ -20,7 +20,7 @@ import rootReducer from 'store/main-store';
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // FONT AWESOME INIT
-library.add(fab, faSearch, faUserCircle)
+library.add(fab, faSearch, faUserCircle, faHome, faCalendarAlt, faPlus, faAngleRight, faAngleLeft, faEllipsisH,);
 
 ReactDOM.render(
   <Provider store={store}>

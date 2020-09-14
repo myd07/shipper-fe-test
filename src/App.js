@@ -6,8 +6,8 @@ import { defaultRoutes } from 'routes';
 function App() {
   return (
     <React.Fragment>
-      <Switch>
-        <DefaultLayout>
+      <DefaultLayout>
+        <Switch>
         {
           defaultRoutes.map(route => (
             <Route
@@ -20,11 +20,11 @@ function App() {
             />
           ))
         }
-        </DefaultLayout>
         <Route>
           <Redirect push to='/' />
         </Route>
-      </Switch>
+        </Switch>
+      </DefaultLayout>
     </React.Fragment>
   );
 }
