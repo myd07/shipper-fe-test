@@ -1,23 +1,13 @@
-td {
-  padding: 5px 10px;
+@mixin font-roboto {
+  font-family: 'Roboto', sans-serif;
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
+html,
+body {
   width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.select {
-  margin-bottom: 20px;
+  height: 100%;
+  font-size: 14px !important;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  @include font-roboto;
 }
