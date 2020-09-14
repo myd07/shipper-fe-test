@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .action-bar_info {
     h1 {
       color: ${colors.mainColor};
@@ -17,6 +21,9 @@ export const Wrapper = styled.div`
     p {
       margin: 0px;
       color: ${colors.grey80};
+    }
+    @media screen and (max-width: 1000px) {
+      margin-bottom: 20px;
     }
   }
   .action-bar_action {
@@ -36,6 +43,11 @@ export const Wrapper = styled.div`
         margin-left: 10px
       }
     }
+    @media screen and (max-width: 1000px) {
+      flex: 1;
+      flex-direction: column;
+      width: 100%;
+    }
   }
   .action-bar_search {
     position: relative;
@@ -53,6 +65,13 @@ export const Wrapper = styled.div`
       left: 10px;
       top: 12px;
       color: ${colors.mainColor}
+    }
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+      margin-bottom: 20px;
     }
   }
 `;

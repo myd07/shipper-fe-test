@@ -5,6 +5,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 50px;
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
   a {
     text-decoration: none;
     font-weight: 700;

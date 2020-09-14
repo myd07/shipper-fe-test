@@ -12,6 +12,13 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  .header_burger {
+    display: none;
+    font-size: 2rem;
+    @media screen and (max-width: 700px) {
+      display: block;
+    }
+  }
   .header_logo {
     display: flex;
     align-items: center;
@@ -24,6 +31,11 @@ export const Wrapper = styled.div`
   .header_user {
     display: flex;
     align-items: center;
+    p {
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
+    }
   }
   .header_user-name {
     color: ${colors.mainColor}

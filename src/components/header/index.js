@@ -9,6 +9,7 @@ class Header extends React.PureComponent {
     return (
       <>
         <Wrapper>
+          <FontAwesomeIcon className="header_burger" icon="bars" />
           <div className="header_logo">
             <img src={ShipperLogo} alt="Shipper Logo" />
           </div>
